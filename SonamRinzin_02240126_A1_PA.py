@@ -1,0 +1,1 @@
+print("My base for starting assignment")
