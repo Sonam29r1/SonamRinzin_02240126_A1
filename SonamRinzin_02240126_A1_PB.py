@@ -1,67 +1,57 @@
-# Part B: Games
+
 
 def guess_number_game():
-    """
-    A simple guess-the-number game.
-    """
     import random
-
-    # Generate a random number between 1 and 100
-    number_to_guess = random.randint(1, 100)
+    number_to_guess = random.randint(1, 25)
     attempts = 0
 
     print("Welcome to the Guess the Number game!")
-    print("I'm thinking of a number between 1 and 100.")
+    print("I'm thinking of a number between 1 and 25.")
 
     while True:
         guess = int(input("Enter your guess: "))
         attempts += 1
 
         if guess < number_to_guess:
-            print("Too low! Try again.")
+            print("Too low! ❌ Try again.")
         elif guess > number_to_guess:
-            print("Too high! Try again.")
+            print("Too high! ❌ Try again.")
         else:
-            print(f"Congratulations! You guessed the number in {attempts} attempts.")
+            print(f"Congratulations 😜! You guessed the number in {attempts} attempts.")
             break
 
 def rock_paper_scissors_game():
-    """
-    A simple text-based Rock-Paper-Scissors game.
-    """
     import random
 
-    choices = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(choices)
+    game_choices = ["rock", "paper", "scissors"]
+    computer = random.choice(game_choices)
 
     print("Welcome to Rock-Paper-Scissors!")
-    user_choice = input("Enter your choice (rock, paper, scissors): ").lower()
+    player = input("Enter your choice (rock, paper, scissors): ").lower()
 
-    if user_choice not in choices:
-        print("Invalid choice. Please enter rock, paper, or scissors.")
+    if player not in game_choices:
+        print("Invalid choice ❌. Please enter rock, paper, or scissors.")
         return
 
-    print(f"Computer chose: {computer_choice}")
+    print("Computer has chosen: ",computer,"!!!")
 
-    if user_choice == computer_choice:
-        print("It's a tie!")
-    elif (user_choice == "rock" and computer_choice == "scissors") or \
-         (user_choice == "paper" and computer_choice == "rock") or \
-         (user_choice == "scissors" and computer_choice == "paper"):
-        print("You win!")
+    if player == computer:
+        print("It's a tie(-_-)!\n Come again next time")
+    elif (player == "rock" and computer == "scissors"):
+        print("You win ❣ Congratulations ♡ \nCome win again next time")
+    elif (player == "paper" and computer == "rock"):
+        print("You win ❣ Congratulations ♡\nCome win again next time")
+    elif (player == "scissors" and computer == "paper"):
+        print("You win ❣ Congratulations ♡\nCome win next time")
     else:
-        print("You lose!")
+        print("You lose ❌! Better luck next time ☹ \nCome again and win next time ")
 
-# Main Program
 
-def main():
-    """
-    Main function to run the program.
-    """
+def main_menu():
     while True:
-        print("\nSelect a game (1-3):")
-        print("1. Guess the Number game")
-        print("2. Rock-Paper-Scissors game")
+        print("Select a game (1-3):")
+        print("1. Guess the Number game 🤔 ")
+        print("2. Rock-Paper-Scissors game(✌️  ✊ ✋)")
         print("3. Exit program")
 
         choice = input("Enter your choice: ")
@@ -82,6 +72,5 @@ def main():
                 print("Exiting program. Goodbye!")
                 break
 
-# Run the main program
-if __name__ == "__main__":
-    main()
+
+main_menu()
