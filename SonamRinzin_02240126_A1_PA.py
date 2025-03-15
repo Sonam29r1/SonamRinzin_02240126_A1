@@ -27,12 +27,12 @@ def prime_sum_calculator():
 def length_unit_converter():
     
     value = float(input("Enter the length value: "))
-    user_coice = input("Enter 'M' for meters to feet or 'F' for feet to meters: ").upper()
+    user_choice = input("Enter 'M' for meters to feet or 'F' for feet to meters: ").upper()
 
-    if user_coice == 'M':
+    if user_choice == 'M':
         converted_value = value * 3.28084 
         print(value, "meters = ",round(converted_value, 2), "feets")
-    elif user_coice == 'F':
+    elif user_choice == 'F':
         converted_value = value / 3.28084 
         print(f"{value} feet = {round(converted_value, 2)} meters")
     else:
