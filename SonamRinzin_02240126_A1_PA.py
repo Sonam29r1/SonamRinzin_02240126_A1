@@ -1,12 +1,12 @@
 
-def is_prime(n):
+def prime_number_checker(x):
     
-    if n <= 1:
-        return False  # Numbers less than or equal to 1 are not prime
-    for i in range(2, n):  # Check all numbers from 2 to n-1
-        if n % i == 0:  # If n is divisible by i, it's not prime
+    if x <= 1:
+        return False  
+    for i in range(2, x): 
+        if x % i == 0: 
             return False
-    return True  # If no divisors are found, n is prime
+    return True  
 
 def prime_sum_calculator():
     start = int(input("Enter the start of the range: "))
@@ -15,58 +15,57 @@ def prime_sum_calculator():
     prime_sum = 0
 
     for n in range(start, end + 1):
-        if is_prime(n):  # Check if the number is prime
-            prime_sum += n  # Add the prime number to the sum
+        if prime_number_checker(n):  
+            prime_sum += n  
 
-    # Print the result
     print("Sum of prime numbers between",start, "and" ,end, "is: ", prime_sum)
 
 def length_unit_converter():
     
     value = float(input("Enter the length value: "))
-    direction = input("Enter 'M' for meters to feet or 'F' for feet to meters: ").upper()
+    user_coice = input("Enter 'M' for meters to feet or 'F' for feet to meters: ").upper()
 
-    if direction == 'M':
-        converted_value = value * 3.28084  # Convert meters to feet
-        print(f"{value} meters = {round(converted_value, 2)} feet")
-    elif direction == 'F':
-        converted_value = value / 3.28084  # Convert feet to meters
+    if user_coice == 'M':
+        converted_value = value * 3.28084 
+        print(value, "meters = ",round(converted_value, 2), "feets")
+    elif user_coice == 'F':
+        converted_value = value / 3.28084 
         print(f"{value} feet = {round(converted_value, 2)} meters")
     else:
-        print("Invalid direction. Please enter 'M' or 'F'.")
+        print("Invalid choice. Please enter 'M' or 'F' .")
 
 def consonant_counter():
     
-    text = input("Enter a string: ")
-    consonants = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    user_text = input("Enter a string: ")
+    consonants = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
     count = 0
 
-    # Loop through each character in the string
-    for char in text:
-        if char in consonants:  # Check if the character is a consonant
+    for char in user_text:
+        if char in consonants:
             count += 1
+    print("Number of consonants in",user_text, "is :",count)
+         
 
-    print(f"Number of consonants: {count}")
 
 def min_max_finder():
     numbers = []
-    count = int(input("How many numbers do you want to enter? "))
+    number_list = int(input("How many numbers do you want to enter? "))
 
-    for i in range(count):
-        num = float(input(f"Enter number {i + 1}: "))
-        numbers.append(num)
+    for i in range(number_list):
+        entered_number = float(input(f"Enter number {i + 1}: "))
+        numbers.append(entered_number)
 
     smallest = min(numbers)
     largest = max(numbers)
 
-    print(f"Smallest: {smallest}, Largest: {largest}")
+    print("Smallest number is : ",smallest," and ", "Largest number is: ",largest)
 
 def palindrome_checker():
-    text = input("Enter a string: ")
-    cleaned_text = ''.join(char.lower() for char in text if char.isalnum())  # Remove spaces and punctuation, convert to lowercase
-    is_palindrome = cleaned_text == cleaned_text[::-1]  # Check if the string is the same when reversed
+    text = input("Enter a string to check for Palindrome: ")
+    cleaned_text = ''.join(char.lower() for char in text if char.isalnum())  
+    check_palindrome = cleaned_text == cleaned_text[::-1] 
 
-    print(f"Is '{text}' a palindrome? {is_palindrome}")
+    print("Is ",text, "a palindrome?",check_palindrome)
 
 def word_counter():
     words_to_count = ["the", "was", "and"]
@@ -74,22 +73,24 @@ def word_counter():
 
     try:
         with open(file_path, 'r') as file:
-            text = file.read().lower()  # Read the file and convert to lowercase
-            word_counts = {word: text.split().count(word) for word in words_to_count}  # Count occurrences of each word
+            text = file.read().lower()  
+        word_counts = {}
+        for word in words_to_count:
+            word_counts[word] = 0 
 
-            for word, count in word_counts.items():
-                print(f"'{word}' appears {count} times.")
+        words_in_text = text.split()
+
+        for word in words_in_text:
+            if word in word_counts:  
+                word_counts[word] += 1   
+        for word, count in word_counts.items():
+            print(f"'{word}' appears {count} times.")
     except FileNotFoundError:
         print("File not found. Please check the file path.")
 
-# Main Program
-
-def main():
-    """
-    Main function to run the program.
-    """
+def main_menu():
     while True:
-        print("\nSelect a function (1-6):")
+        print("Select a function (1-6):")
         print("1. Calculate the sum of prime numbers")
         print("2. Convert length units")
         print("3. Count consonants in string")
@@ -124,6 +125,4 @@ def main():
                 print("Exiting program. Goodbye!")
                 break
 
-# Run the main program
-if __name__ == "__main__":
-    main()
+main_menu()
