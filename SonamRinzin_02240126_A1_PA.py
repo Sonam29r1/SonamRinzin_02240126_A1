@@ -1,8 +1,6 @@
 #Functions to be defined :
-
 #1 Checks prime number
 def prime_number_checker(x):
-    
     if x <= 1:
         return False  
     for i in range(2, x): 
@@ -14,19 +12,15 @@ def prime_number_checker(x):
 def prime_sum_calculator():
     start = int(input("Enter the start of the range: "))
     end = int(input("Enter the end of the range: "))
-
     prime_sum = 0
-
     for n in range(start, end + 1):
         if prime_number_checker(n):  
             prime_sum += n  
-
     print("Sum of prime numbers between",start, "and" ,end, "is: ", prime_sum)
     print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
 #2 Converter
 def length_unit_converter():
-    
     value = float(input("Enter the length value: "))
     user_choice = input("Enter 'M' for meters to feet or 'F' for feet to meters: ").upper()
 
@@ -44,7 +38,6 @@ def length_unit_converter():
 
 #3 Consonant Counter
 def consonant_counter():
-    
     user_text = input("Enter a string: ")
     consonants = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
     count = 0
@@ -67,7 +60,6 @@ def minimum_maximum_finder():
 
     smallest = min(numbers)
     largest = max(numbers)
-
     print("Smallest number is : ",smallest," and ", "Largest number is: ",largest)
     print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
@@ -104,8 +96,8 @@ def word_counter():
         print("File not found ❌. Please check the file path.")
         print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
-#Main display or menu
 
+#Main display or menu
 def main_menu():
     while True:
         print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
