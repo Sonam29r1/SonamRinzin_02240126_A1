@@ -1,4 +1,6 @@
+#Functions to be defined :
 
+#1 Checks prime number
 def prime_number_checker(x):
     
     if x <= 1:
@@ -8,6 +10,7 @@ def prime_number_checker(x):
             return False
     return True  
 
+#1.2 Sum calculator
 def prime_sum_calculator():
     start = int(input("Enter the start of the range: "))
     end = int(input("Enter the end of the range: "))
@@ -20,6 +23,7 @@ def prime_sum_calculator():
 
     print("Sum of prime numbers between",start, "and" ,end, "is: ", prime_sum)
 
+#2 Converter
 def length_unit_converter():
     
     value = float(input("Enter the length value: "))
@@ -34,6 +38,7 @@ def length_unit_converter():
     else:
         print("Invalid choice. Please enter 'M' or 'F' .")
 
+#3 Consonant Counter
 def consonant_counter():
     
     user_text = input("Enter a string: ")
@@ -46,8 +51,8 @@ def consonant_counter():
     print("Number of consonants in",user_text, "is :",count)
          
 
-
-def min_max_finder():
+#4 Minimum and maximum finder
+def minimum_maximum_finder():
     numbers = []
     number_list = int(input("How many numbers do you want to enter? "))
 
@@ -60,13 +65,15 @@ def min_max_finder():
 
     print("Smallest number is : ",smallest," and ", "Largest number is: ",largest)
 
+#5 Palindrom string checker
 def palindrome_checker():
     text = input("Enter a string to check for Palindrome: ")
     cleaned_text = ''.join(char.lower() for char in text if char.isalnum())  
     check_palindrome = cleaned_text == cleaned_text[::-1] 
 
     print("Is ",text, "a palindrome?",check_palindrome)
-
+    
+#6 Specific word counter
 def word_counter():
     words_to_count = ["the", "was", "and"]
     file_path = input("Enter the path to the text file: ")
@@ -88,6 +95,8 @@ def word_counter():
     except FileNotFoundError:
         print("File not found. Please check the file path.")
 
+#Main display or menu
+
 def main_menu():
     while True:
         print("Select a function (1-6):")
@@ -108,7 +117,7 @@ def main_menu():
         elif choice == '3':
             consonant_counter()
         elif choice == '4':
-            min_max_finder()
+            minimum_maximum_finder()
         elif choice == '5':
             palindrome_checker()
         elif choice == '6':
