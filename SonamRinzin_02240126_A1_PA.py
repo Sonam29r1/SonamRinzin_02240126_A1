@@ -22,6 +22,7 @@ def prime_sum_calculator():
             prime_sum += n  
 
     print("Sum of prime numbers between",start, "and" ,end, "is: ", prime_sum)
+    print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
 #2 Converter
 def length_unit_converter():
@@ -32,11 +33,14 @@ def length_unit_converter():
     if user_choice == 'M':
         converted_value = value * 3.28084 
         print(value, "meters = ",round(converted_value, 2), "feets")
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
     elif user_choice == 'F':
         converted_value = value / 3.28084 
         print(f"{value} feet = {round(converted_value, 2)} meters")
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
     else:
         print("Invalid choice ❌. Please enter 'M' or 'F' .")
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
 #3 Consonant Counter
 def consonant_counter():
@@ -49,6 +53,7 @@ def consonant_counter():
         if char in consonants:
             count += 1
     print("Number of consonants in",user_text, "is :",count)
+    print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
          
 
 #4 Minimum and maximum finder
@@ -64,6 +69,7 @@ def minimum_maximum_finder():
     largest = max(numbers)
 
     print("Smallest number is : ",smallest," and ", "Largest number is: ",largest)
+    print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
 #5 Palindrom string checker
 def palindrome_checker():
@@ -72,6 +78,7 @@ def palindrome_checker():
     check_palindrome = cleaned_text == cleaned_text[::-1] 
 
     print("Is ",text, "a palindrome?",check_palindrome)
+    print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
     
 #6 Specific word counter
 def word_counter():
@@ -92,13 +99,16 @@ def word_counter():
                 word_counts[word] += 1   
         for word, count in word_counts.items():
             print(f"'{word}' appears {count} times.")
+            print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
     except FileNotFoundError:
         print("File not found ❌. Please check the file path.")
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
 #Main display or menu
 
 def main_menu():
     while True:
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
         print("Select a function (1-6) ♡ :")
         print("1. Calculate the sum of prime numbers")
         print("2. Convert length units")
@@ -107,6 +117,7 @@ def main_menu():
         print("5. Check for palindrome")
         print("6. Word Counter")
         print("7. Exit program ❌")
+        print("★ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★")
 
         choice = input("Enter your choice: ")
 
@@ -123,7 +134,7 @@ def main_menu():
         elif choice == '6':
             word_counter()
         elif choice == '7':
-            print("Exiting program. Goodbye ♡!")
+            print("Exiting program. Goodbye ♡ !")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 7.")
@@ -131,7 +142,7 @@ def main_menu():
         if choice != '7':
             again = input("Would you like to try another function? ♡ (y/n): ").lower()
             if again != 'y':
-                print("Exiting program. Goodbye  ♡!")
+                print("Exiting program. Goodbye  ♡ !")
                 break
 
 main_menu()
