@@ -36,7 +36,7 @@ def length_unit_converter():
         converted_value = value / 3.28084 
         print(f"{value} feet = {round(converted_value, 2)} meters")
     else:
-        print("Invalid choice. Please enter 'M' or 'F' .")
+        print("Invalid choice ❌. Please enter 'M' or 'F' .")
 
 #3 Consonant Counter
 def consonant_counter():
@@ -93,20 +93,20 @@ def word_counter():
         for word, count in word_counts.items():
             print(f"'{word}' appears {count} times.")
     except FileNotFoundError:
-        print("File not found. Please check the file path.")
+        print("File not found ❌. Please check the file path.")
 
 #Main display or menu
 
 def main_menu():
     while True:
-        print("Select a function (1-6):")
+        print("Select a function (1-6) ♡ :")
         print("1. Calculate the sum of prime numbers")
         print("2. Convert length units")
         print("3. Count consonants in string")
         print("4. Find min and max numbers")
         print("5. Check for palindrome")
         print("6. Word Counter")
-        print("7. Exit program")
+        print("7. Exit program ❌")
 
         choice = input("Enter your choice: ")
 
@@ -123,15 +123,15 @@ def main_menu():
         elif choice == '6':
             word_counter()
         elif choice == '7':
-            print("Exiting program. Goodbye!")
+            print("Exiting program. Goodbye ♡!")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 7.")
 
         if choice != '7':
-            again = input("Would you like to try another function? (y/n): ").lower()
+            again = input("Would you like to try another function? ♡ (y/n): ").lower()
             if again != 'y':
-                print("Exiting program. Goodbye!")
+                print("Exiting program. Goodbye  ♡!")
                 break
 
 main_menu()
